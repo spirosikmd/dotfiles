@@ -1,0 +1,124 @@
+###############################################
+# USEFUL DEFAULTS
+###############################################
+
+[include]
+  # Store sensitive git info or machine specific config in a ~/.gitconfig.local.
+  path = ~/.gitconfig.local
+
+[core]
+  # Use .gitignore in your $HOME directory for global gitignores.
+  excludesfile = ~/.gitignore
+
+[merge]
+  # Always include a summary in merge commits.
+  summary = true
+
+[push]
+  # Default push to update current branch on remote. Then you don't need to type
+  # out an upstream name when creating a new upstream branch. e.g. To push a new
+  # branch to remote just do `git push -u`.
+  default = current
+
+[fetch]
+  # Always prune refs when fetching.
+  prune = true
+
+[help]
+  # After misspelling git command, use closest match after 2s.
+  autocorrect = 20
+
+
+###############################################
+# OPTIONAL HANDY CONFIGURATIONS
+###############################################
+
+[core]
+  # Use less when output is longer than screen. Also leave result on screen
+  # after exiting less.
+  pager = less -F -X
+
+[tag]
+  # When listing tags sort by date.
+  sort = -*authordate
+
+[pager]
+  # Use diff-so-fancy: https://github.com/so-fancy/diff-so-fancy
+  # The diff-so-fancy script is in git/bin. Ensure that after stowing your ~/bin
+  # folder is in your $PATH.
+  # log = diff-so-fancy | less -F -X
+  # show = diff-so-fancy | less -F -X
+  # diff = diff-so-fancy | less -F -X
+
+###############################################
+# ALIASES
+###############################################
+#
+# Aliases allow you to add new git commands. These can be just shortcuts to
+# common git commands or mapped to scripts that add new functionality.
+#
+# These are a few that we find useful. But as with any config, it's personal.
+
+[alias]
+
+  # LOGGING
+  ###############################################
+
+  # Pretty logging.
+  log-pretty = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
+  l = log-pretty
+
+  # Log recent commits.
+  log-recent = !git l -12
+  r = log-recent
+
+  # Log commits that diverge from origin/master. Useful for seeing what commits
+  # you've made on a feature branch.
+  log-diverged = !git l origin/master..$(git symbolic-ref --short HEAD)
+  ld = log-diverged
+
+  # Get the most recent tag.
+  latest-tag-version = "!git tag --list --sort='-*authordate' 'v*' | head -n 1"
+
+  # Log the commits since the latest tag.
+  log-tag = !git l $(git latest-tag-version)..HEAD
+  lt = log-tag
+
+
+  # COMMITING
+  ###############################################
+
+  st = status -s # Short status.
+  ci = commit --verbose # Verbose commit. Shows diff in commit message editor.
+  co = checkout
+  di = diff # Diff of unstaged changes.
+  dc = diff --cached # Diff of staged changes.
+  aa = add --all
+
+  # If you need to force push it's recommended that you use force-with-lease.
+  # This ensures that if any new commits were added to the remote branch since
+  # you last pulled that the push will fail.
+  pushf = push --force-with-lease
+
+  # Add all changed or untracked files to a Work In Progress commit.
+  wip = "!git add . && git commit -m 'WIP'"
+
+  # Soft roll back one commit.
+  roll-back-one = reset HEAD~1
+
+  # BRANCHES
+  ###############################################
+
+  b = branch -lvv # Verbose branch list. Shows upstream branches.
+  fa = fetch --all # Fetch all references.
+
+  # Delete any branches already merged into master.
+  # RISK: Quite safe. Soft deletes. Ensures that all commits in the branch are
+  # in master before deleting.
+  prune-local = "!git branch --merged | grep -v \"\\*\\|master\" | xargs -n 1 git branch -d && echo \"Merged branches pruned.\""
+
+  # Prune "gone" branches. Deletes any branches that have an upstream that has
+  # been deleted. Useful when squash merging branches via github.
+  # RISK: Use with care. Does a hard delete (-D). Deletes a branch if it once
+  # had an upstream branch that has since been deleted.
+  prune-gone = "!git checkout master --quiet && git branch -lvv | grep \"gone\\]\" | sed -e 's/^ *//' | cut -d ' ' -f 1 | while read branch; do git branch -D $branch; done; echo 'Gone branches pruned.'"

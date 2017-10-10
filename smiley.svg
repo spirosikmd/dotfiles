@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSLayerGroup">
+            <circle id="Oval-50-Copy" fill="#FECD55" sketch:type="MSShapeGroup" cx="19" cy="19" r="19"></circle>
+            <path d="M32.29163,32.576923 C28.865232,35.931766 24.174147,38 19,38 C8.50659,38 0,29.49341 0,19 C0,11.881646 3.914545,5.677584 9.70837,2.423077 C6.185874,5.872012 4,10.680737 4,16 C4,26.49341 12.50659,35 23,35 C26.375057,35 29.544578,34.119997 32.29163,32.576923 L32.29163,32.576923 L32.29163,32.576923 Z" id="Oval-50-Copy-3" fill="#F6BB43" sketch:type="MSShapeGroup"></path>
+            <ellipse id="Oval-53-Copy-2" fill="#303030" sketch:type="MSShapeGroup" transform="translate(19.000000, 13.500000) rotate(-16.000000) translate(-19.000000, -13.500000) " cx="19" cy="13.5" rx="2" ry="2.5"></ellipse>
+            <path d="M33.389759,16.211539 C33.509726,16.776503 33.572907,17.363031 33.572907,17.964604 C33.572907,22.51926 29.951116,26.211539 25.483409,26.211539 C21.598946,26.211539 18.353952,23.420362 17.572907,19.697999 C19.285339,20.529417 21.256682,21.002948 23.354594,21.002948 C27.567097,21.002948 31.269291,19.093735 33.389759,16.211539 L33.389759,16.211539 L33.389759,16.211539 Z" id="Oval-55-Copy-2" fill="#303030" sketch:type="MSShapeGroup"></path>
+            <ellipse id="Oval-53-Copy-3" fill="#303030" sketch:type="MSShapeGroup" transform="translate(28.500000, 11.000000) rotate(-10.000000) translate(-28.500000, -11.000000) " cx="28.5" cy="11" rx="1.47093424" ry="2.02218254"></ellipse>
+        </g>
+    </g>
+</svg>
