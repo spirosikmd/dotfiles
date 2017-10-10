@@ -9,7 +9,7 @@ bold=$(tput -Txterm bold)
 reset=$(tput -Txterm sgr0)
 
 export EDITOR=vim
-export PS1='\[$bold\]\[$black\][\[$green\]\w\[$yellow\]\[$black\]][\[$red\]$(node --version)\[$black\]]$(__git_info)$reset\$ '
+export PS1='\[$bold\]\[$black\][\[$dk_blue\]\w\[$black\]][\[$red\]$(node --version)\[$black\]]$(__git_info)$reset\$ '
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
