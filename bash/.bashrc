@@ -9,7 +9,7 @@ bold=$(tput -Txterm bold)
 reset=$(tput -Txterm sgr0)
 
 export EDITOR=vim
-export PS1='\[$bold\]\[$black\][\[$dk_blue\]\u\[$black\]][\[$green\]\w\[$yellow\]\[$black\]][\[$red\]$(node --version)\[$black\]]\$ '
+export PS1='\[$bold\]\[$black\][\[$dk_blue\]\u\[$black\]][\[$green\]\w\[$yellow\]\[$black\]][\[$red\]$(node --version)\[$black\]][$(__git_info)\[$black\]]$reset\$ '
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -21,3 +21,17 @@ source $(brew --prefix nvm)/nvm.sh
 source ~/.usabillarc
 
 source $HOME/.bash/git-completion.bash
+
+source $HOME/.bash/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_STATESEPARATOR="|"
+GIT_PS1_SHOWUPSTREAM="auto"
+__git_info() {
+  local info=$(__git_ps1 | sed -E 's/\(|\)//g' | xargs)
+  [[ -z $info ]] && return;
+  local branch="$(echo $info | cut -d '|' -f 1)"
+  local status="$(echo $info | cut -d '|' -f 2)"
+
+  echo -n "$lt_blue$status"
+}
