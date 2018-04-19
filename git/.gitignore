@@ -10,7 +10,6 @@
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -139,3 +138,27 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+#############################
+# VSCODE
+#############################
+
+.vscode
+
+# Local project files
+.local/
+
+.rpt2_cache/
+
+
+############################
+# NODE
+############################
+
+yarn-error.log
+
+############################
+# OTHER
+############################
+
+diagnosis_log.txt

@@ -22,3 +22,5 @@ set smartcase     " .. unless uppercase in term
 
 " Wrap git commit messages after x characters
 au FileType gitcommit set tw=72
+
+vmap '' :w !pbcopy<CR><CR>

@@ -40,7 +40,7 @@
 
 [tag]
   # When listing tags sort by date.
-  sort = -*authordate
+  sort = version:refname
 
 [pager]
   # Use diff-so-fancy: https://github.com/so-fancy/diff-so-fancy

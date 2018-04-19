@@ -21,8 +21,9 @@ source $(brew --prefix nvm)/nvm.sh
 source ~/.usabillarc
 
 source $HOME/.bash/git-completion.bash
-
+source $HOME/.bash/aliases.sh
 source $HOME/.bash/git-prompt.sh
+
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_STATESEPARATOR="|"
