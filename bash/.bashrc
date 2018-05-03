@@ -1,15 +1,14 @@
-black=$(tput -Txterm setaf 0)
-red=$(tput -Txterm setaf 1)
-green=$(tput -Txterm setaf 2)
-yellow=$(tput -Txterm setaf 3)
-dk_blue=$(tput -Txterm setaf 4)
-pink=$(tput -Txterm setaf 5)
-lt_blue=$(tput -Txterm setaf 6)
-bold=$(tput -Txterm bold)
-reset=$(tput -Txterm sgr0)
+black="\[\033[40;1;30m\]"
+red="\[\033[40;1;31m\]"
+green="\[\033[40;1;32m\]"
+yellow="\[\033[40;1;33m\]"
+dk_blue="\[\033[40;1;34m\]"
+pink="\[\033[40;1;35m\]"
+lt_blue="\[\033[40;1;36m\]"
+reset="\[\e[m\]"
 
 export EDITOR=vim
-export PS1='\[$bold\]\[$black\][\[$dk_blue\]\w\[$black\]][\[$red\]$(node --version)\[$black\]]$(__git_info)$reset\$ '
+export PS1="$black[$dk_blue\w$black][$red$(node --version)$black]$(__git_info)$reset\$ "
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
