@@ -5,7 +5,7 @@ yellow="\[\033[40;1;33m\]"
 dk_blue="\[\033[40;1;34m\]"
 pink="\[\033[40;1;35m\]"
 lt_blue="\[\033[40;1;36m\]"
-reset="\[\e[m\]"
+reset="\[\033[40;1;0m\]"
 
 export EDITOR=vim
 export PS1="$black[$dk_blue\w$black][$red$(node --version)$black]$(__git_info)$reset\$ "
