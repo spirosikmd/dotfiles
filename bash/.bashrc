@@ -1,14 +1,11 @@
-black="\[\033[40;1;30m\]"
-red="\[\033[40;1;31m\]"
-green="\[\033[40;1;32m\]"
-yellow="\[\033[40;1;33m\]"
-dk_blue="\[\033[40;1;34m\]"
-pink="\[\033[40;1;35m\]"
-lt_blue="\[\033[40;1;36m\]"
-reset="\[\033[40;1;0m\]"
+#/bin/bash
+
+__ps1_main() {
+    export PS1="$black[$dk_blue\w$black][$red$(node --version)$black]$(__git_info)$reset\$ "
+}
+export PROMPT_COMMAND=__ps1_main
 
 export EDITOR=vim
-export PS1="$black[$dk_blue\w$black][$red$(node --version)$black]$(__git_info)$reset\$ "
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -35,3 +32,12 @@ __git_info() {
 
     echo -n "$black[$lt_blue$status$black]"
 }
+
+black="\[\033[40;1;30m\]"
+red="\[\033[40;1;31m\]"
+green="\[\033[40;1;32m\]"
+yellow="\[\033[40;1;33m\]"
+dk_blue="\[\033[40;1;34m\]"
+pink="\[\033[40;1;35m\]"
+lt_blue="\[\033[40;1;36m\]"
+reset="\[\033[40;1;0m\]"
