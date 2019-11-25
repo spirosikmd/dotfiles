@@ -122,3 +122,7 @@
   # RISK: Use with care. Does a hard delete (-D). Deletes a branch if it once
   # had an upstream branch that has since been deleted.
   prune-gone = "!git checkout master --quiet && git branch -lvv | grep \"gone\\]\" | sed -e 's/^ *//' | cut -d ' ' -f 1 | while read branch; do git branch -D $branch; done; echo 'Gone branches pruned.'"
+
+[user]
+	name = Spyros Ioakeimidis
+	email = spyrosikmd@gmail.com

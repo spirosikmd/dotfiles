@@ -14,8 +14,6 @@ export GPG_TTY=$(tty)
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 
-source ~/.usabillarc
-
 source $HOME/.bash/git-completion.bash
 source $HOME/.bash/aliases.sh
 source $HOME/.bash/git-prompt.sh
