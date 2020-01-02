@@ -125,4 +125,7 @@
 
 [user]
 	name = Spyros Ioakeimidis
-	email = spyrosikmd@gmail.com
+  email = spyrosikmd@gmail.com
+
+[commit]
+	gpgsign = true
